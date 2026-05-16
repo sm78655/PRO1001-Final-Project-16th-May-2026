@@ -1,0 +1,159 @@
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#F1EEDE;
+color:#090B05;
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 20px;
+background:#F1EEDE;
+border-bottom:1px solid #000;
+}
+
+.logo{
+font-family:serif;
+font-size:32px;
+}
+
+.cart{
+background:#009F51;
+color:white;
+padding:8px 12px;
+border-radius:50%;
+}
+
+.hero{
+height:80vh;
+background:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.overlay{
+text-align:center;
+color:white;
+}
+
+.overlay h2{
+font-size:90px;
+font-family:serif;
+}
+
+.line{
+width:2px;
+height:120px;
+background:white;
+margin:20px auto;
+}
+
+.cards{
+display:grid;
+grid-template-columns:1fr 1fr;
+}
+
+.card{
+padding:40px;
+text-align:center;
+background:#fff;
+}
+
+.card img{
+width:100%;
+border-radius:20px;
+}
+
+.btn{
+display:inline-block;
+background:#DC4131;
+padding:12px 20px;
+color:white;
+text-decoration:none;
+border-radius:8px;
+margin-top:20px;
+}
+
+.products{
+padding:40px;
+}
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.product-card img{
+width:100%;
+border-radius:12px;
+}
+
+.chat-wrapper{
+max-width:500px;
+margin:50px auto;
+background:white;
+padding:20px;
+border-radius:20px;
+}
+
+.chat-box{
+height:400px;
+overflow-y:auto;
+}
+
+.bot-message,.user-message{
+padding:12px;
+border-radius:12px;
+margin:10px 0;
+max-width:80%;
+}
+
+.bot-message{
+background:#E8E1C9;
+}
+
+.user-message{
+background:#E1EAF0;
+margin-left:auto;
+}
+
+.chat-input{
+display:flex;
+gap:10px;
+margin-top:20px;
+}
+
+.chat-input input{
+flex:1;
+padding:12px;
+}
+
+.chat-input button{
+background:#DC4131;
+border:none;
+color:white;
+padding:12px 20px;
+border-radius:10px;
+}
+
+.footer{
+background:#DC4131;
+color:white;
+padding:40px;
+margin-top:40px;
+}
+
+@media(max-width:768px){
+.cards{
+grid-template-columns:1fr;
+}
+
+.overlay h2{
+font-size:60px;
+}
+}
