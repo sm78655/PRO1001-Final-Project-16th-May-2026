@@ -1,56 +1,49 @@
 
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+if(menuBtn && mobileMenu){
+
+menuBtn.addEventListener('click', ()=>{
+
+mobileMenu.classList.toggle('active');
+
+});
+
+}
+
 const sendBtn = document.getElementById('sendBtn');
-const input = document.getElementById('input');
-const messages = document.getElementById('messages');
+const userInput = document.getElementById('userInput');
+const chatBox = document.getElementById('chatBox');
 
-sendBtn.addEventListener('click', async () => {
+if(sendBtn){
 
-const text = input.value.trim();
+sendBtn.addEventListener('click', ()=>{
+
+const text = userInput.value.trim();
 
 if(!text) return;
 
-const userDiv = document.createElement('div');
-userDiv.className = 'user-message';
-userDiv.textContent = text;
-messages.appendChild(userDiv);
+const userMessage = document.createElement('div');
 
-input.value = '';
+userMessage.className = 'user-message';
 
-const loading = document.createElement('div');
-loading.className = 'bot-message';
-loading.textContent = 'Loading...';
-messages.appendChild(loading);
+userMessage.textContent = text;
 
-try {
+chatBox.appendChild(userMessage);
 
-const response = await fetch('https://api.openai.com/v1/chat/completions', {
-method:'POST',
-headers:{
-'Content-Type':'application/json',
-'Authorization':'Bearer YOUR_API_KEY'
-},
-body:JSON.stringify({
-model:'gpt-3.5-turbo',
-messages:[{role:'user',content:text}]
-})
-});
+userInput.value = '';
 
-if(!response.ok){
-throw new Error('Failed to connect');
-}
+const botMessage = document.createElement('div');
 
-const data = await response.json();
+botMessage.className = 'bot-message';
 
-loading.remove();
+botMessage.textContent =
+'FRAM supports sustainable local farming and reusable packaging systems.';
 
-const botDiv = document.createElement('div');
-botDiv.className = 'bot-message';
-botDiv.textContent = data.choices[0].message.content;
-messages.appendChild(botDiv);
-
-}catch(error){
-
-loading.textContent = 'Failed to connect. Wait and try again later.';
-}
+chatBox.appendChild(botMessage);
 
 });
+
+}
+
