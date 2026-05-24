@@ -10,8 +10,8 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 20px;
-border-bottom:1px solid #000;
 background:#F1EEDE;
+border-bottom:1px solid #000;
 }
 
 .logo{
@@ -45,20 +45,26 @@ margin:10px 0;
 
 .hero{
 height:80vh;
-background:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop') center/cover;
+background:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
+text-align:center;
 }
 
 .overlay{
-text-align:center;
 color:white;
+background:rgba(0,0,0,0.3);
+padding:40px;
+border-radius:12px;
 }
 
 .overlay h2{
 font-size:90px;
 font-family:serif;
+margin:0;
 }
 
 .hero-line{
@@ -68,6 +74,10 @@ background:white;
 margin:20px auto;
 }
 
+.overlay p{
+font-size:24px;
+}
+
 .cards{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -75,8 +85,8 @@ grid-template-columns:1fr 1fr;
 
 .card{
 padding:40px;
-text-align:center;
 background:white;
+text-align:center;
 }
 
 .card img{
@@ -93,6 +103,11 @@ border-radius:8px;
 text-decoration:none;
 margin-top:20px;
 }
+.menu-btn{
+font-size:32px;
+cursor:pointer;
+font-weight:bold;
+}
 
 .products{
 padding:40px;
@@ -101,7 +116,7 @@ padding:40px;
 .product-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+gap:30px;
 }
 
 .product-card img{
@@ -109,55 +124,15 @@ width:100%;
 height:300px;
 object-fit:cover;
 border-radius:12px;
+display:block;
 }
 
-.chat-wrapper{
-max-width:500px;
-margin:50px auto;
-background:white;
-padding:20px;
-border-radius:20px;
+.product-card h3{
+font-size:32px;
 }
 
-.chat-box{
-height:300px;
-overflow-y:auto;
-}
-
-.bot-message,
-.user-message{
-padding:12px;
-border-radius:12px;
-margin:10px 0;
-max-width:80%;
-}
-
-.bot-message{
-background:#E8E1C9;
-}
-
-.user-message{
-background:#E1EAF0;
-margin-left:auto;
-}
-
-.chat-input{
-display:flex;
-gap:10px;
-}
-
-.chat-input input{
-flex:1;
-padding:12px;
-}
-
-.chat-input button{
-background:#DC4131;
-color:white;
-border:none;
-padding:12px 20px;
-border-radius:10px;
-cursor:pointer;
+.product-card p{
+font-size:22px;
 }
 
 @media(max-width:768px){
@@ -166,8 +141,16 @@ cursor:pointer;
 grid-template-columns:1fr;
 }
 
+.product-grid{
+grid-template-columns:1fr;
+}
+
 .overlay h2{
 font-size:60px;
+}
+
+.logo{
+font-size:28px;
 }
 
 }
